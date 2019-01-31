@@ -9,15 +9,22 @@ public class Category {
 	 
 	 
 	 
+	 public void add(Transaction newItem) 
+	 //pushes the argument to the transHistory stack
+	 {
+		 transHistory.push(newItem);
+	 }
+	 
+	 
+	 
 	 public void addStack(Stack<Transaction> NewItems) 
-	 //adds the argument to the transHistory stack
+	 //pushes the argument to the transHistory stack
 	 {
 		 while (NewItems.size() > 0)
 		 {
 			 transHistory.push(NewItems.pop());
 		 }
 	 }
-	 
 	 
 	 
 	 
@@ -43,13 +50,20 @@ public class Category {
 		 return accumulator;
 	 }
 	 
-	 public Transaction[] history(int length) // TODO
+	 public Transaction[] getHistory(int length) // TODO
 	 //returns a specified number of transactions in an array, with the most recent in index 0
 	 {
-		 
 		 Transaction[] transArray = new Transaction[length];
 		 
+		 for (int i = 0; i < length; i++)
+		 {
+			 transArray[i] = transHistory.pop();
+		 }
 		 
+		 for (int i = 0; i < length; i++)
+		 {
+			 transHistory.push(transArray[i]);
+		 }
 		 
 		 return transArray;
 	 }
