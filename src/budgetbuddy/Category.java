@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Category {
 	
-	 private Stack<Transaction> transHistory = new Stack<Transaction>();
+	 private Stack<Transaction> _transHistory = new Stack<Transaction>();
 	 
 	 
 	 
@@ -12,7 +12,7 @@ public class Category {
 	 public void add(Transaction newItem) 
 	 //pushes the argument to the transHistory stack
 	 {
-		 transHistory.push(newItem);
+		 this._transHistory.push(newItem);
 	 }
 	 
 	 
@@ -22,7 +22,7 @@ public class Category {
 	 {
 		 while (NewItems.size() > 0)
 		 {
-			 transHistory.push(NewItems.pop());
+			 this._transHistory.push(NewItems.pop());
 		 }
 	 }
 	 
@@ -36,15 +36,15 @@ public class Category {
 		 Stack<Transaction> tempStack = new Stack<Transaction>();
 		 
 		 
-		 while (transHistory.size() > 0)
+		 while (this._transHistory.size() > 0)
 		 {
-			 temp = tempStack.push(transHistory.pop());
-			 accumulator += temp.cost();
+			 temp = tempStack.push(_transHistory.pop());
+			 accumulator += temp.getCost();
 		 }
 		 
 		 while (tempStack.size() > 0)
 		 {
-			 transHistory.push(tempStack.pop());
+			 this._transHistory.push(tempStack.pop());
 		 }
 		 
 		 return accumulator;
@@ -57,12 +57,12 @@ public class Category {
 		 
 		 for (int i = 0; i < length; i++)
 		 {
-			 transArray[i] = transHistory.pop();
+			 transArray[i] = this._transHistory.pop();
 		 }
 		 
 		 for (int i = 0; i < length; i++)
 		 {
-			 transHistory.push(transArray[i]);
+			 this._transHistory.push(transArray[i]);
 		 }
 		 
 		 return transArray;
