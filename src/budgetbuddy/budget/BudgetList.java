@@ -1,10 +1,10 @@
-package budgettool;
+package budgetbuddy.budget;
 
 import java.util.ArrayList;
 
 public class BudgetList 
 {
-	ArrayList<BudgetItem> itemList = new ArrayList();
+	ArrayList<BudgetItem> itemList = new ArrayList<BudgetItem>();
 	double totalIncome = Integer.MIN_VALUE;
 	
 	public BudgetList(double income)
@@ -54,7 +54,7 @@ public class BudgetList
 		System.out.println("Budget Percent: " + totalPercent);
 	}
 	
-	public ArrayList getList()
+	public ArrayList<BudgetItem> getList()
 	{
 		return itemList;
 	}
