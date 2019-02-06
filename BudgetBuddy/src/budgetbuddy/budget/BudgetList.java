@@ -1,4 +1,4 @@
-package budgettool;
+package budgetbuddy.budget;
 
 import java.util.ArrayList;
 

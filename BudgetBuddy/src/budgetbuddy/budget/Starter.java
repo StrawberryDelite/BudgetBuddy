@@ -1,4 +1,4 @@
-package budgettool;
+package budgetbuddy.budget;
 
 public class Starter 
 {
